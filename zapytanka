@@ -34,6 +34,7 @@ join lokalizacje on lokalizacje.ID_lokalizacji=obserwacje.ID_lokalizacji
 group by obserwacje.ID_lokalizacji;
 
 7. Wyświetl lokalizacje, które miały więcej niż 10 obserwacji.
+
 select count(obserwacje.ID_obserwacji), lokalizacje.lokalizacja from obserwacje
 join lokalizacje on lokalizacje.ID_lokalizacji=obserwacje.ID_lokalizacji
 group by obserwacje.ID_lokalizacji
