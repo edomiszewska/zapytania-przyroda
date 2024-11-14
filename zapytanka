@@ -52,6 +52,12 @@ group by obserwacje.ID_gatunku
 order by avg(obserwacje.liczebnosc) asc;
 
 9. Wyświetl nazwę lokalizacji i łączną liczebność obserwacji, posortowane malejąco.
+
+select sum(obserwacje.liczebnosc), lokalizacje.lokalizacja from obserwacje
+join lokalizacje on lokalizacje.ID_lokalizacji=obserwacje.ID_lokalizacji
+group by lokalizacje.lokalizacja
+order by sum(obserwacje.liczebnosc) desc;
+
 10. Wyświetl nazwę gatunku i maksymalną liczebność obserwacji dla każdego gatunku.
 11. Wyświetl gatunki, które miały średnią liczebność większą niż 20.
 12. Wyświetl nazwy lokalizacji i liczbę różnych gatunków obserwowanych w każdej lokalizacji.
