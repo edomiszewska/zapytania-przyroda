@@ -1,14 +1,17 @@
 1. Wyświetl liczbę obserwacji dla każdego gatunku.
+
 select count(obserwacje.ID_obserwacji), gatunki.nazwa_zwyczajowa from obserwacje 
 join gatunki on gatunki.ID_gatunku=obserwacje.ID_gatunku 
 group by obserwacje.ID_gatunku;
 
 2. Wyświetl średnią liczebność obserwacji dla każdego gatunku.
+
 select AVG(obserwacje.liczebnosc), gatunki.nazwa_zwyczajowa from obserwacje
 join gatunki on gatunki.ID_gatunku=obserwacje.ID_gatunku
 group by obserwacje.ID_gatunku;
 
 3. Wyświetl maksymalną liczebność dla każdego gatunku, ale tylko dla gatunków o liczebności większej niż 10.
+
 select MAX(obserwacje.liczebnosc), gatunki.nazwa_zwyczajowa from obserwacje
 join gatunki on gatunki.ID_gatunku=obserwacje.ID_gatunku
 where obserwacje.liczebnosc>10
@@ -23,6 +26,7 @@ group by obserwacje.ID_gatunku
 order by obserwacje.liczebnosc DESC;
 
 5. Wyświetl liczbę obserwacji w każdej lokalizacji.
+
 select count(obserwacje.ID_obserwacji), lokalizacje.lokalizacja from obserwacje
 join lokalizacje on lokalizacje.ID_lokalizacji=obserwacje.ID_lokalizacji
 group by obserwacje.ID_lokalizacji;
